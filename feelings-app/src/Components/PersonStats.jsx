@@ -6,19 +6,36 @@ class PersonStats extends Component {
         this.state = {
             Name: "",
             Age: "",
-            Feeling: ""
+            Feeling: "",
+            Msg:""
         };
     };
 
-    userPost = (post) => {
-        post.preventDefault();
+    userPost = (evt) => {
+        evt.preventDefault();
         console.log("User Post function called.");
         this.setState({
-            Name: post.Name,
-            Age: post.Age,
-            Feeling: post.Feeling
+            Msg:`Hello ${this.state.Name}. You are ${this.state.Age} and feeling ${this.state.Feeling}.`
         })
         console.log(this.state);
+    }
+
+    changedName = (evt) => {
+        this.setState(
+            { Name: evt.target.value }
+        )
+    }
+
+    changedAge = (evt) => {
+        this.setState(
+            { Age: evt.target.value }
+        )
+    }
+
+    changedFeeling = (evt) => {
+        this.setState(
+            { Feeling: evt.target.value }
+        )
     }
 
     render() {
@@ -29,21 +46,21 @@ class PersonStats extends Component {
                     <fieldset>
                         <legend>Enter Your Information</legend>
 
-                        <label htmlfor="nameField">Name:</label>
-                        <input type="text" id="nameField" placeholder="What is your name?" value={this.props.name}></input>
+                        <label htmlFor="nameField">Name:</label>
+                        <input onChange={this.changedName} type="text" id="nameField" placeholder="What is your name?" value={this.state.Name}></input>
 
-                        <label id="ageField">Age:</label>
-                        <input type="text" id="ageField" placeholder="How old are you?" value={this.props.Age}></input>
+                        <label htmlFor="ageField">Age:</label>
+                        <input onChange={this.changedAge} type="text" id="ageField" placeholder="How old are you?" value={this.state.Age}></input>
 
-                        <label id="feelingField">Feeling:</label>
-                        <input type="text" id="feelingField" placeholder="How are you feeling?" value={this.props.Feeling}></input>
+                        <label htmlFor="feelingField">Feeling:</label>
+                        <input onChange={this.changedFeeling} type="text" id="feelingField" placeholder="How are you feeling?" value={this.state.Feeling}></input>
 
                         <button onClick={this.userPost}>Submit</button>
 
                     </fieldset>
                 </form>
                 <div>
-                    {`Hello ${this.state.name}. You are ${this.state.Age} and feeling ${this.state.Feeling}.`}
+                    {this.state.Msg}
                 </div>
             </div>
         )
