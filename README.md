@@ -1,5 +1,6 @@
 # react-forms-1
-
+### `PersonStats` doesn't have any props and you're missing the on change functions...Be sure to check out the solution. 
+### Score : 2/5
 ### Exercise 1: Basic Form with a Stateful Component
 - Create a new react app called `feelings-app`
 - Create a `AppContainer` component to maintain shared stat
