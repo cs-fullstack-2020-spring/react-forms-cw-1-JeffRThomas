@@ -1,17 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PersonStats from './PersonStats';
 
 class AppContainer extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={};
+        this.state = {};
     };
 
-    render(){
-        return(
+   
+    render() {
+        return (
             <div>
                 {/* Yes, the parent is correctly referenced! */}
-                <PersonStats/>
+                <PersonStats />
             </div>
         )
     };
