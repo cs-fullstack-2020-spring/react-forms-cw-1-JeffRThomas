@@ -10,7 +10,7 @@ class AppContainer extends Component {
     render(){
         return(
             <div>
-                Yes, the parent is correctly referenced!
+                {/* Yes, the parent is correctly referenced! */}
                 <PersonStats/>
             </div>
         )
